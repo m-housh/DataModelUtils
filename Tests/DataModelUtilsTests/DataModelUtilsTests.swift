@@ -1,15 +1,29 @@
 import XCTest
-@testable import DataModelUtils
+import DataModelUtils
+
+
 
 final class DataModelUtilsTests: XCTestCase {
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct
-        // results.
-        XCTAssertEqual(DataModelUtils().text, "Hello, World!")
+    
+    func testValidations() {
+        let model = TestDataModel()
+        XCTAssertFalse(model.isValid)
+        model.name = "foo"
+        XCTAssert(model.isValid)
+    }
+    
+    func testBasicValidations() {
+        let model = BasicTestModel()
+        XCTAssert(model.isValid)
+    }
+    
+    func testMemoryRepository() {
+        let repo = MemoryRepository(BasicTestModel.self)
+        XCTAssertEqual(repo.all().count, 0)
     }
 
     static var allTests = [
-        ("testExample", testExample),
+        ("testValidations", testValidations),
+        ("testBasicValidations", testBasicValidations),
     ]
 }
