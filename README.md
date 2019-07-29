@@ -15,7 +15,7 @@ Package.swift
         platforms: [
             .macOS(.v10_15),
             .iOS(.v13),
-        ]
+        ],
         dependencies: [
             ...
             .package(url: "https://github.com/m-housh/DataModelUtils.git", from: "0.1.0"),
