@@ -20,8 +20,8 @@ public final class MemoryRepository<T>: DataModelRepository where T: DataModel {
     public typealias Model = T
     public typealias ModelReturnType = T
     
-    /// - seealso: `BindableObject`
-    public var willChange = PassthroughSubject<Void, Never>()
+    /// - seealso: `ObservableObject`
+    public var objectWillChange = PassthroughSubject<Void, Never>()
     
     /// The data storage.
     private var data: [T] { willSet { update() } }
@@ -54,4 +54,4 @@ public final class MemoryRepository<T>: DataModelRepository where T: DataModel {
     
 }
 
-extension MemoryRepository: BindableObject { }
+extension MemoryRepository: ObservableObject { }

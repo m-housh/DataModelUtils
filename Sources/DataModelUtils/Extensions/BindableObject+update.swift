@@ -9,9 +9,10 @@ import SwiftUI
 import Combine
 
 
-extension BindableObject where PublisherType: PassthroughSubject<Void, Never> {
+extension ObservableObject where ObjectWillChangePublisher: PassthroughSubject<Void, Never> {
     
     /// Notifies when changes are made to the object.
     /// - seealso: `BindableObject`
-    public func update() { willChange.send() }
+    public func update() { objectWillChange.send() }
 }
+

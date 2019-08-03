@@ -16,7 +16,7 @@ import SwiftUI
  Conformance will ensure that your data model will inherit all the correct protocols.
  
  */
-public protocol DataModel: BindableObject, Codable, Reflectable, ReflectionDecodable, Validatable { }
+public protocol DataModel: ObservableObject, Codable, Reflectable, ReflectionDecodable, Validatable, Identifiable { }
 
 // MARK: - Validatable
 extension DataModel {
