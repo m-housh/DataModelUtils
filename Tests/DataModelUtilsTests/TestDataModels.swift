@@ -40,7 +40,8 @@ extension BasicTestModel: Codable {
 
 final class TestDataModel: DataModel {
     
-    var willChange = PassthroughSubject<Void,Never>()
+    
+    var objectWillChange = PassthroughSubject<Void,Never>()
     
     var id: Int?
     var name: String
