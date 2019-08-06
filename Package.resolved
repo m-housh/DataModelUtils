@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Validations",
+        "repositoryURL": "https://mhoush@bitbucket.org/hhedev/validations.git",
+        "state": {
+          "branch": null,
+          "revision": "aeab7831a7ef7f7fd8276b15bf4aa40d03c8ff76",
+          "version": "0.1.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
