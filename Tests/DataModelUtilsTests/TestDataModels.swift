@@ -7,6 +7,7 @@
 
 import DataModelUtils
 import Combine
+import Foundation
 
 final class BasicTestModel: DataModel {
     
@@ -76,5 +77,37 @@ extension TestDataModel: Codable {
         case id, name
     }
 }
+
+
+
+class Resource {
+    
+    static var resourcePath = ProcessInfo.processInfo.environment["TEST_RESOURCES_DIR"] ?? "./Resources"
+    
+    let name: String
+    let type: String?
+    
+    init(name: String, type: String? = nil) {
+        self.name = name
+        self.type = type
+    }
+    
+    var path: String {
+        guard let type = self.type else {
+            return "\(name)"
+        }
+        return "\(name).\(type)"
+    }
+    
+    var url: URL {
+        let fullPath = "\(Resource.resourcePath)/\(path)"
+        return URL(fileURLWithPath: fullPath)
+    }
+    
+    var data: Data? {
+        return try? Data(contentsOf: url)
+    }
+}
+
 
 

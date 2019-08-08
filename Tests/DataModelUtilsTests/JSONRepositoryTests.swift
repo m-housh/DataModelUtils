@@ -13,15 +13,17 @@ class JSONRepositoryTests: XCTestCase {
     
     
     func testLoadingJSON() {
-        let url = URL(fileURLWithPath: "/tmp/datamodelutils/Resources/testModels.json")
-        let repo = try! JSONRepository(BasicTestModel.self, url: url)
+        let resource = Resource(name: "testModels.json")
+        //let url = URL(fileURLWithPath: "/tmp/datamodelutils/Resources/testModels.json")
+        let repo = try! JSONRepository(BasicTestModel.self, url: resource.url)
         XCTAssertEqual(repo.all().count, 5)
     }
     
     
     func testLoadingSingleModelFile() {
-        let url = URL(fileURLWithPath: "/tmp/datamodelutils/Resources/testSingleModel.json")
-        let repo = try! JSONRepository(BasicTestModel.self, url: url)
+        let resource = Resource(name: "testSingleModel", type: "json")
+        //let url = URL(fileURLWithPath: "/tmp/datamodelutils/Resources/testSingleModel.json")
+        let repo = try! JSONRepository(BasicTestModel.self, url: resource.url)
         XCTAssertEqual(repo.all().count, 1)
     }
     
