@@ -15,7 +15,7 @@ import Combine
  A `DataModelRepository` that stores values in memory.
  
  */
-public final class MemoryRepository<T>: DataModelRepository where T: DataModel {
+public class MemoryRepository<T>: DataModelRepository where T: DataModel {
 
     public typealias Model = T
     public typealias ModelReturnType = T
