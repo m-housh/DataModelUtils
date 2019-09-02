@@ -12,7 +12,7 @@
  A representation of a repository used to store and retrieve a `DataModel`.
  
  */
-protocol DataModelRepository {
+public protocol DataModelRepository {
     
     /// The `DataModel` associated with this repository.
     associatedtype Model: DataModel

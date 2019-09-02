@@ -3,11 +3,11 @@
     "pins": [
       {
         "package": "Validations",
-        "repositoryURL": "https://mhoush@bitbucket.org/hhedev/validations.git",
+        "repositoryURL": "https://github.com/m-housh/Validations.git",
         "state": {
           "branch": null,
-          "revision": "aeab7831a7ef7f7fd8276b15bf4aa40d03c8ff76",
-          "version": "0.1.0"
+          "revision": "dbf8f5ff716c4a96b9a79d757f536d673f84c626",
+          "version": "0.1.2"
         }
       }
     ]
